@@ -11,18 +11,17 @@ const routes = [
     meta: { title: '首页', keepAlive: false }
   }
 ]
-router.beforeEach((to, from, next) => {
-    document.title = to.meta.title;
-    const userInfo = sessionStorage.getItem('userInfo') || null;
-    if (!userInfo && to.meta.auth) {
-        next('/login')
-    } else {
-        next();
-    }
-})
 const router = new VueRouter({
   routes,
   scrollBehavior: () => ({ y: 0 })
 })
-
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title;
+  const userInfo = sessionStorage.getItem('userInfo') || null;
+  if (!userInfo && to.meta.auth) {
+      next('/login')
+  } else {
+      next();
+  }
+})
 export default router
