@@ -1,6 +1,7 @@
 const path = require('path')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const SkeletonWebpackPlugin = require('vue-skeleton-webpack-plugin')
+const PROXY_API = process.env.VUE_APP_PROXY_API
 function resolve(dir) {
     return path.join(__dirname, dir)
 }
@@ -43,6 +44,23 @@ module.exports = {
                         analyzerPort: '8081'
                     })
                 );
+            }
+        }
+    },
+    devServer: {
+        port: 8000,
+        host: '0.0.0.0',
+        hot: true,
+        open: true,
+        progress: true,
+        clientLogLevel: 'none',
+        historyApiFallback: true,
+        proxy: {
+            [PROXY_API]: {
+              target: 'http://localhost:8000',
+              pathRewrite: {[PROXY_API] : ''},
+              ws: true, // 代理的WebSockets
+              changeOrigin: true, // 允许websockets跨域
             }
         }
     }
