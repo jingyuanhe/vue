@@ -1,9 +1,10 @@
 import axios from 'axios'
-import { baseApi } from '../config'
 import vm from '../main'
+const baseURL = process.env.VUE_APP_PROXY_API;
 var http = axios.create({
-    baseURL: baseApi,
-    timeout: 5000
+    baseURL,
+    timeout: 5000,
+    withCredentials: false,
 })
 http.interceptors.request.use(
     config => {
