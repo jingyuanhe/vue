@@ -29,6 +29,9 @@ export default {
         { name: '首页添加骨架屏' }
       ]
     }
+  },
+  created () {
+    console.log(1);
   }
 }
 </script>
