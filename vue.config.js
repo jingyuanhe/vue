@@ -3,12 +3,12 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const SkeletonWebpackPlugin = require('vue-skeleton-webpack-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
 const PROXY_API = process.env.VUE_APP_PROXY_API
-
+const IS_PROD = ["production", "prod"].includes(process.env.NODE_ENV);
 function resolve(dir) {
     return path.join(__dirname, dir)
 }
 module.exports = {
-    publicPath: './',
+    publicPath: IS_PROD ? "./" : '/', // 默认'/'，线上环境时候部署到任意子目录,
     // 指定生成的 index.html 的输出路径
     indexPath: 'index.html',
     // 是否使用包含运行时编译器的 Vue 构建版本。设置为 true 后你就可以在 Vue 组件中使用 template 选项了，但是这会让你的应用额外增加 10kb 左右。

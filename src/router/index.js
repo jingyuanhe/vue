@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import routes from './routes'
-const base = process.env.VUE_APP_BASE_URL;
+const base = process.env.BASE_URL;
 const IS_AUTHORIZATION = process.env.VUE_APP_IS_AUTHORIZATION;
 Vue.use(VueRouter)
 const router = new VueRouter({
