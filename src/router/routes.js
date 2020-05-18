@@ -1,14 +1,14 @@
 export default [
     {
       path: '/',
-      name: 'home',
-      component: () => import('../views/Home.vue'),
+      name: 'Home',
+      component: () => import('../views/Home'),
       meta: { title: '首页', keepAlive: false }
     },
     {
-      path: '/home',
-      name: 'home',
-      component: () => import('../views/Home.vue'),
+      path: '/Home',
+      name: 'Home',
+      component: () => import('../views/Home'),
       meta: { title: '首页', keepAlive: false }
     }
   ]

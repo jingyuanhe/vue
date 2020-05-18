@@ -17,20 +17,20 @@ module.exports = {
     transpileDependencies: [],
     // 生产环境关闭 source map
     productionSourceMap: false,
-    css: {
-        loaderOptions: {
-            postcss: {
-                plugins: [
-                    require('postcss-plugin-px2rem')({
-                        exclude: /(node_module)/,
-                        rootValue: 100,
-                        mediaQuery: false, //（布尔值）允许在媒体查询中转换px。
-                        minPixelValue: 10 //设置要替换的最小像素值(3px会被转rem)。 默认 0
-                    })
-                ]
-            }
-        }
-    },
+    // css: {
+    //     loaderOptions: {
+    //         postcss: {
+    //             plugins: [
+    //                 require('postcss-plugin-px2rem')({
+    //                     exclude: /(node_module)/,
+    //                     rootValue: 100,
+    //                     mediaQuery: false, //（布尔值）允许在媒体查询中转换px。
+    //                     minPixelValue: 10 //设置要替换的最小像素值(3px会被转rem)。 默认 0
+    //                 })
+    //             ]
+    //         }
+    //     }
+    // },
     chainWebpack: config => {
         config.resolve.alias
             .set('@', resolve('src'))
