@@ -188,3 +188,4 @@ input[type=checkbox]:checked::after {
     position: absolute;
     bottom: 50px;
 }
+img{width: 100%;}

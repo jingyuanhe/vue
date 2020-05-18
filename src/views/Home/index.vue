@@ -77,7 +77,7 @@
   import Floor from './Floor';
   import HotGoods from './HotGoods';
   import Search from './Search';
-  import Refresh from './Refresh';
+//   import Refresh from './Refresh';
   import BScroll from '@/components/BScroll';
   import { GoodsMixin } from '@/mixins/goodsMixin';
   import { loadMixin } from '@/mixins/loadMixin';
@@ -87,7 +87,7 @@
   export default {
     name: 'Home',
     mixins: [ GoodsMixin, loadMixin ],
-    components: { Banner, Category, Recommend, Floor, HotGoods, Search, Refresh, BScroll },
+    components: { Banner, Category, Recommend, Floor, HotGoods, Search, BScroll },
     data() {
       return {
         homeData: {}, // 首页数据
@@ -109,7 +109,7 @@
     },
     watch: {
       // 监听定位城市变化 | 值在 GoodsMixin 中
-      locationCity(newCity, old) {
+      locationCity() {
         this._getHome();
       }
     },
@@ -150,7 +150,9 @@
             confirmButtonColor: '#b532e9'
           })
           .then(() => { this.setLocationCity(res.locationCity); })
-          .catch(error => this.$router.push({ name: 'City' }));
+          .catch(error => {
+              console.log(error);
+              this.$router.push({ name: 'City' })});
 
         } catch(error) {
           console.log(error);
@@ -255,7 +257,7 @@
        * 监听子组件派发事件 | 获取实时滚动位置坐标
        *  @param {Object} pos 滚动的实时坐标
        */
-      contentScroll(pos) {
+      contentScroll() {
       },
       /**
        * 触摸开始 | 当用户在触摸平面上放置了一个触点时触发
