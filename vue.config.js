@@ -1,4 +1,5 @@
 const path = require('path')
+var CopyWebpackPlugin = require('copy-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const SkeletonWebpackPlugin = require('vue-skeleton-webpack-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
