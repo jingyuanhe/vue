@@ -83,7 +83,6 @@
 </script>
 
 <style lang="scss">
-<<<<<<< HEAD
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   width: 100% !important;
@@ -126,7 +125,6 @@ p {
     line-height: 30px;
     margin-top: 30px;
 }
-=======
   // 底部导航点进其他页面 导航 tab 动画
   .nav-slide-enter,
   .nav-slide-leave-to {
@@ -175,5 +173,4 @@ p {
       height: 100%;
     }
   }
->>>>>>> f11d7c1a1d5684ff05d043dd329c6ca94a322a16
 </style>

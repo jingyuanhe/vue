@@ -10,11 +10,8 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
-<<<<<<< HEAD
-    "copy-webpack-plugin": "^6.0.3",
-=======
     "better-scroll": "^1.15.2",
->>>>>>> f11d7c1a1d5684ff05d043dd329c6ca94a322a16
+    "copy-webpack-plugin": "^6.0.3",
     "core-js": "^3.6.4",
     "fastclick": "^1.0.6",
     "vant": "^2.8.1",
